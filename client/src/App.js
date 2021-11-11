@@ -26,11 +26,13 @@ const App = (props) => {
   }, []);
 
   const deleteMovie = (id)=> {
-    axios.delete(`http://localhost:5000/api/movies/${id}`).then(res => {
+    setMovies(movies.filter(item => item.id !== id
+    ))
+    // axios.delete(`http://localhost:5000/api/movies/${id}`).then(res => {
 
-    }).catch(err => {
-      console.error(err);
-    });
+    // }).catch(err => {
+    //   console.error(err);
+    // });
   }
 
   const addToFavorites = (movie) => {
